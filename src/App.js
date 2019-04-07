@@ -1,28 +1,24 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { AppContextProvider } from './context';
+import Counter from './Counter'
+import User from './User'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+const App = () => {
+  return (
+    <AppContextProvider>
+      <div className="mw6 center ph2 ph4-ns">
+        <header>
+          <h1 className="normal lh-copy measure">
+            Counter Application
+          </h1>
         </header>
+        <main>
+          <User />
+          <Counter />
+        </main>
       </div>
-    );
-  }
-}
+    </AppContextProvider>
+  );
+};
 
 export default App;
